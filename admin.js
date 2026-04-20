@@ -6,7 +6,7 @@ form.addEventListener("submit", function(e) {
   const project = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
-    status: document.getElementById("status").value,
+    status: document.getElementById("status").value.trim(),
     description: document.getElementById("desc").value
   };
 
