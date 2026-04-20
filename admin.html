@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-black text-white p-6">
 
-<h1 class="text-2xl mb-6">Admin Dashboard</h1>
+    <h1 class="text-2xl mb-6">Admin Dashboard</h1>
 
-<form id="projectForm" class="space-y-4 max-w-md">
-  <input id="name" placeholder="Project Name" class="w-full p-2 bg-gray-900">
-  <input id="email" placeholder="Client Email" class="w-full p-2 bg-gray-900">
-  <input id="status" placeholder="Status (Pending/Ongoing/Done)" class="w-full p-2 bg-gray-900">
-  <textarea id="desc" placeholder="Description" class="w-full p-2 bg-gray-900"></textarea>
+    <form id="projectForm" class="space-y-4 max-w-md">
+        <input id="name" placeholder="Project Name" class="w-full p-2 bg-gray-900">
+        <input id="email" placeholder="Client Email" class="w-full p-2 bg-gray-900">
+        <input id="status" placeholder="Status (Pending/Ongoing/Done)" class="w-full p-2 bg-gray-900">
+        <textarea id="desc" placeholder="Description" class="w-full p-2 bg-gray-900"></textarea>
 
-  <button class="bg-yellow-500 text-black px-4 py-2 rounded">
-    Add Project
-  </button>
-</form>
+        <button class="bg-yellow-500 text-black px-4 py-2 rounded">
+            Add Project
+        </button>
+    </form>
 
-<script src="admin.js"></script>
+
+
+
+    <!-- SCRIPTS -->
+    <!-- <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6FAYZzJMKf8HxpWQbYs3RXVwFLzoNDI8",
+            authDomain: "client-dashboard-25deb.firebaseapp.com",
+            projectId: "client-dashboard-25deb",
+            storageBucket: "client-dashboard-25deb.firebasestorage.app",
+            messagingSenderId: "524180510044",
+            appId: "1:524180510044:web:31618e9b0f52377965dd99"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.db = db;
+
+    </script> -->
+
+
+    <script src="admin.js"></script>
 </body>
+
 </html>
