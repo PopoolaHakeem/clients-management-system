@@ -21,6 +21,6 @@ form.addEventListener("submit", function (e) {
     window.location.href = "dashboard.html";
 });
 
- const userProjects = projects.filter(
-        p => p.email.trim().toLowerCase() === email.trim().toLowerCase()
-    );
+//  const userProjects = projects.filter(
+//         p => p.email.trim().toLowerCase() === email.trim().toLowerCase()
+//     );
