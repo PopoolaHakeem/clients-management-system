@@ -25,9 +25,6 @@
 
 
 
-
-
-
 const form = document.getElementById("projectForm");
 
 form.addEventListener("submit", function(e) {

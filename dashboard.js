@@ -35,7 +35,6 @@
 
 
 
-
 const container = document.getElementById("projectList");
 
 const email = localStorage.getItem("clientEmail");
