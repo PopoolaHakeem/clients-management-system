@@ -34,12 +34,19 @@ form.addEventListener("submit", function(e) {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     status: document.getElementById("status").value.trim(),
-    description: document.getElementById("desc").value
+    description: document.getElementById("desc").value,
+    createdAt: new Date().toISOString()
   };
 
   let projects = JSON.parse(localStorage.getItem("projects")) || [];
 
   projects.push(project);
+
+   deleteProject = (index) => {
+    projects.splice(index, 1);
+    localStorage.setItem("projects", JSON.stringify(projects));
+    location.reload();
+  };
 
   localStorage.setItem("projects", JSON.stringify(projects));
 

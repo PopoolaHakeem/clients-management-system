@@ -1,7 +1,7 @@
 const container = document.getElementById("projectList");
 
 const email = localStorage.getItem("clientEmail");
-const projects = JSON.parse(localStorage.getItem("projects")) || [] (createdAt, new Date().toISOString());
+const projects = JSON.parse(localStorage.getItem("projects")) || [];
 
 const userProjects = projects.filter(p => p.email === email);
 
@@ -17,6 +17,7 @@ if (userProjects.length === 0) {
 
 userProjects.forEach((project, index) => {
 
+
   // Status logic
   let statusColor = "bg-gray-600";
 
@@ -28,11 +29,11 @@ userProjects.forEach((project, index) => {
     completed++;
   }
 
-  // status date formatting
+  // status date and time formatting
 
   var date = project.createdAt ? new Date(project.createdAt) : null;
   
-  var formattedDate = "No date";
+  var formattedDate = "";
   var formattedTime = "";
 
   if (date && !isNaN(date)) {
@@ -66,10 +67,14 @@ userProjects.forEach((project, index) => {
     </span>
 
     <span class="text-gray-500 text-sm mt-2 float-right">
-      ${formattedDate} <br> ${formattedTime}
+      ${formattedTime} <br> ${formattedDate}
     </span>
-    `;
-
+    
+    <span class="text-white text-sm mt-2 bg-red-500 py-2 px-4 rounded cursor-pointer float-bottom" onclick="deleteProject(${index})">
+      Del 
+    </span> `;
+     
+   
 
   container.appendChild(div);
 });
