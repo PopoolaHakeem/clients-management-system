@@ -1,8 +1,7 @@
-
 const container = document.getElementById("projectList");
 
 const email = localStorage.getItem("clientEmail");
-const projects = JSON.parse(localStorage.getItem("projects")) || [];
+const projects = JSON.parse(localStorage.getItem("projects")) || [] (createdAt, new Date().toISOString());
 
 const userProjects = projects.filter(p => p.email === email);
 
@@ -29,12 +28,31 @@ userProjects.forEach((project, index) => {
     completed++;
   }
 
+  // status date formatting
+
+  var date = project.createdAt ? new Date(project.createdAt) : null;
+  
+  var formattedDate = "No date";
+  var formattedTime = "";
+
+  if (date && !isNaN(date)) {
+    formattedDate = date.toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    formattedTime = date.toLocaleTimeString(undefined, {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
   const div = document.createElement("div");
 
   div.className = `
     bg-white/5 backdrop-blur-lg p-6 rounded-xl 
-    hover:-translate-y-2 hover:shadow-2xl transition duration-300
-  `;
+    hover:-translate-y-2 hover:shadow-2xl transition duration-300`;
 
   div.setAttribute("data-aos", "fade-up");
 
@@ -46,7 +64,12 @@ userProjects.forEach((project, index) => {
     <span class="${statusColor} px-3 py-1 rounded-full text-sm">
       ${project.status}
     </span>
-  `;
+
+    <span class="text-gray-500 text-sm mt-2 float-right">
+      ${formattedDate} <br> ${formattedTime}
+    </span>
+    `;
+
 
   container.appendChild(div);
 });
