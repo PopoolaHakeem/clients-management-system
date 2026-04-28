@@ -60,6 +60,10 @@ userProjects.forEach((project, index) => {
   div.innerHTML = `
     <h3 class="text-xl font-bold mb-2">${project.name}</h3>
 
+    <span class="text-white text-sm mt-2 bg-red-500 py-1 px-4 rounded-full cursor-pointer float-right" onclick="deleteProject(${index})">
+      Del 
+    </span>
+
     <p class="text-gray-400 mb-4">${project.description}</p>
 
     <span class="${statusColor} px-3 py-1 rounded-full text-sm">
@@ -69,11 +73,9 @@ userProjects.forEach((project, index) => {
     <span class="text-gray-500 text-sm mt-2 float-right">
       ${formattedTime} <br> ${formattedDate}
     </span>
+    `;
     
-    <span class="text-white text-sm mt-2 bg-red-500 py-2 px-4 rounded cursor-pointer float-bottom" onclick="deleteProject(${index})">
-      Del 
-    </span> `;
-     
+    
    
 
   container.appendChild(div);
