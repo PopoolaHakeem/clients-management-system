@@ -49,6 +49,12 @@ userProjects.forEach((project, index) => {
     });
   }
 
+  deleteProject = (index) => {
+    projects.splice(index, 1);
+    localStorage.setItem("projects", JSON.stringify(projects));
+    location.reload();
+  };
+
   const div = document.createElement("div");
 
   div.className = `
@@ -61,7 +67,7 @@ userProjects.forEach((project, index) => {
     <h3 class="text-xl font-bold mb-2">${project.name}</h3>
 
     <span class="text-white text-sm mt-2 bg-red-500 py-1 px-4 rounded-full cursor-pointer float-right" onclick="deleteProject(${index})">
-      Del 
+      Delete 
     </span>
 
     <p class="text-gray-400 mb-4">${project.description}</p>
