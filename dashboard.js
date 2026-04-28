@@ -1,39 +1,3 @@
-// import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-// const container = document.getElementById("projectList");
-// const email = localStorage.getItem("clientEmail");
-
-// async function loadProjects() {
-
-//   const querySnapshot = await getDocs(collection(window.db, "projects"));
-
-//   container.innerHTML = "";
-
-//   querySnapshot.forEach((doc) => {
-//     const project = doc.data();
-
-//     if (project.email.toLowerCase() === email.toLowerCase()) {
-
-//       const div = document.createElement("div");
-
-//       div.className = "bg-white/5 p-6 rounded-xl";
-
-//       div.innerHTML = `
-//         <h3 class="text-xl font-bold">${project.name}</h3>
-//         <p class="text-gray-400">${project.description}</p>
-//         <span class="text-yellow-500">${project.status}</span>
-//       `;
-
-//       container.appendChild(div);
-//     }
-//   });
-// }
-
-// loadProjects();
-
-
-
-
 
 const container = document.getElementById("projectList");
 
@@ -97,3 +61,42 @@ function logout() {
   localStorage.removeItem("clientEmail");
   window.location.href = "index.html";
 }
+
+
+
+
+
+
+
+// import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// const container = document.getElementById("projectList");
+// const email = localStorage.getItem("clientEmail");
+
+// async function loadProjects() {
+
+//   const querySnapshot = await getDocs(collection(window.db, "projects"));
+
+//   container.innerHTML = "";
+
+//   querySnapshot.forEach((doc) => {
+//     const project = doc.data();
+
+//     if (project.email.toLowerCase() === email.toLowerCase()) {
+
+//       const div = document.createElement("div");
+
+//       div.className = "bg-white/5 p-6 rounded-xl";
+
+//       div.innerHTML = `
+//         <h3 class="text-xl font-bold">${project.name}</h3>
+//         <p class="text-gray-400">${project.description}</p>
+//         <span class="text-yellow-500">${project.status}</span>
+//       `;
+
+//       container.appendChild(div);
+//     }
+//   });
+// }
+
+// loadProjects();
