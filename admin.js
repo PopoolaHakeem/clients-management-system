@@ -42,11 +42,11 @@ form.addEventListener("submit", function(e) {
 
   projects.push(project);
 
-  //  deleteProject = (index) => {
-  //   projects.splice(index, 1);
-  //   localStorage.setItem("projects", JSON.stringify(projects));
-  //   location.reload();
-  // };
+   deleteProject = (index) => {
+    projects.splice(index, 1);
+    localStorage.setItem("projects", JSON.stringify(projects));
+    location.reload();
+  };
 
   localStorage.setItem("projects", JSON.stringify(projects));
 
