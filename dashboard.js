@@ -5,6 +5,13 @@ const projects = JSON.parse(localStorage.getItem("projects")) || [];
 
 const userProjects = projects.filter(p => p.email === email);
 
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
 let total = userProjects.length;
 let ongoing = 0;
 let completed = 0;
