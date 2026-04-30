@@ -1,11 +1,18 @@
-
+// MENU BUTTON
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
 
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
+closeBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+
+// PROJECT FORM SUBMISSION AND LOCAL STORAGE MANAGEMENT
 const container = document.getElementById("projectList");
 
 const email = localStorage.getItem("clientEmail");
